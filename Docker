@@ -4,7 +4,11 @@
   docker pull alpine                   #install alpine OS
   docker pull kalilinux/kali-rolling   #install kalilinux OS
   docker pull nginx                    #install nginx
-  docker run -it -p 7990:80 nginx
+  docker run -d -p 80:80 nginx         #Run a command in a new container
+  
+  docker images                        #List all downloaded images
+  docker rmi image_id                  #Remove one or more images
+
 
 4.Advanced Commands
 5.Docker Files
