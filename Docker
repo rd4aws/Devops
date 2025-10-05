@@ -1,11 +1,35 @@
 1.Introduction to Docker
 2.Installation
 3.Basic commands
+Run - start a container
+  docker run nginx
+ps - list containers
+ docker ps
+ docker ps -a
+STOP - stop a container
+ docker stop <name>
+Rm - remove a container permanently
+ docker rm <name>
+images - List Images
+ dokcer images
+rmi - Remove images
+ docker rmi nginx
+pull - download an image
+ doker run nginx   #it will install and run
+ docker pull nginx #it will install only
+Append a command
+ docker run ubuntu sleep 5
+Exec - execute a command
+ docker exec container-id/name cat /etc/hosts   #disply content of hosts file
+Run - attach and detach
+ docker run image
+ docker run -d image 
+ docker attach container-id
+  
   docker pull alpine                   #install alpine OS
   docker pull kalilinux/kali-rolling   #install kalilinux OS
   docker pull nginx                    #install nginx
   docker run -d -p 80:80 nginx         #Run a command in a new container
-  
   docker images                        #List all downloaded images
   docker rmi image_id                  #Remove one or more images
 
