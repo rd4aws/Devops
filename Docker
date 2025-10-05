@@ -1,6 +1,6 @@
 1.Introduction to Docker
 2.Installation
-3.Basic commands
+3.Docker commands
 Run - start a container
   docker run nginx
 ps - list containers
@@ -34,9 +34,10 @@ Run - attach and detach
   docker rmi image_id                  #Remove one or more images
 
 
-4.Advanced Commands
-5.Docker Files
-6.Image Handling
-7.Bulding Microservices
-8.Docker Compose
-9.Push Registry
+4.Docker Run
+5.Docker Images
+6.Docker Compose 
+7.Docker Registry 
+8.Docker Engine,Storage & Networking
+9.Docker on Mac & Windows
+10.Container Orchestration - Docker Swarm & & Kubernetes
