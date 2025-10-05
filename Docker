@@ -1,0 +1,14 @@
+1.Introduction to Docker
+2.Installation
+3.Basic commands
+  docker pull alpine                   #install alpine OS
+  docker pull kalilinux/kali-rolling   #install kalilinux OS
+  docker pull nginx                    #install nginx
+  docker run -it -p 7990:80 nginx
+
+4.Advanced Commands
+5.Docker Files
+6.Image Handling
+7.Bulding Microservices
+8.Docker Compose
+9.Push Registry
