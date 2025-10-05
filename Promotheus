@@ -1,1 +1,53 @@
 
+Option 1 —Run Prometheus with a simple Docker command
+------------------------------------------------------
+1. Create a Prometheus configuration file
+   Make a file called prometheus.yml in your current directory:
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+ #This tells Prometheus to scrape itself every 15 seconds.
+
+2. Run Prometheus in Docker
+docker run -d \
+  --name=prometheus \
+  -p 9090:9090 \
+  -v $(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml \
+  prom/prometheus
+Explanation:
+-d → run in detached mode
+--name → container name
+-p 9090:9090 → expose Prometheus web UI on port 9090
+-v → mount local config into the container
+
+3. Open Prometheus UI
+   Visit: 👉 http://localhost:9090
+
+Option 2 — Use Docker Compose (recommended for larger setups)
+-------------------------------------------------------------
+Create a file named docker-compose.yml:
+version: "3"
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    restart: unless-stopped
+
+Then start it with: docker compose up -d
+Verify Prometheus is running
+Check container logs: docker logs prometheus
+You should see something like:  level=info msg="Server is ready to receive web requests."
+
+
+
+
+
+   
