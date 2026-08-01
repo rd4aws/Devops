@@ -1,5 +1,10 @@
 1.Introduction to Docker
 2.Installation
+How to install Docker in Ubuntu
+sudo apt update
+sudo apt install snapd
+sudo snap install docker
+
 3.Docker commands
 Run - start a container
   docker run nginx
